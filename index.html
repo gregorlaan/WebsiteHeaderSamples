@@ -1,0 +1,352 @@
+<html>
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	body {
+		background: whitesmoke;
+		font-family: 'Roboto', sans-serif;
+	}
+	
+	.container {
+		width: 100%;
+		max-width: 992px;
+		margin: 0 auto;
+		padding: 5px 20px;
+	}
+	
+	/* Header */
+	
+	#header {
+		background-color: white;
+		-webkit-box-shadow: 0px 0px 10px #c3c3c3;
+		box-shadow: 0px 0px 10px #c3c3c3;
+		height: 75px;
+		margin-bottom: 50px;
+	}
+	
+	#header > .container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		height: 100%;
+	}
+	
+	h1.logo {
+		text-transform: uppercase;
+	}
+	
+	ul#main-menu {
+		list-style: none;
+	}
+	
+	ul#main-menu li {
+		display: inline-block;
+	}
+	
+	ul#main-menu li a {
+		text-decoration: none;
+		color: black;
+		padding: 10px;
+		display: block;
+	}
+	
+	#header:hover ul#main-menu li a {
+		color: #333;
+		opacity: .8;
+	}
+	
+	#header ul#main-menu li a:hover {
+		color: black;
+		opacity: 1;
+	}
+	
+	/* Inverted header */
+	
+	#header.inverted {
+		background-color: #333;
+		-webkit-box-shadow: 0px 0px 10px #111;
+		box-shadow: 0px 0px 10px #111;
+	}
+	
+	#header.inverted ul#main-menu li a {
+		color: white;
+	}
+	
+	#header.inverted:hover ul#main-menu li a {
+		color: whitesmoke;
+	}
+	
+	#header.inverted ul#main-menu li a:hover {
+		color: white;
+	}
+	
+	#header.inverted h1.logo {
+		color: white;
+	}
+	
+	/* Top Bar */
+	
+	#top-bar {
+		background: #ccc;
+		height: 30px;
+	}
+	
+	#top-bar > .container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		height: 100%;
+	}
+	
+	.contact-info {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+	}
+	
+	ul#lang-menu {
+		list-style: none;
+	}
+	
+	ul#lang-menu li {
+		display: inline-block;
+		padding: 0 5px;
+	}
+	
+	ul#lang-menu li a {
+		text-decoration: none;
+		color: black;
+	}
+	
+	.sep {
+		margin: 0 10px;
+		color: #8c8c8c;
+	}
+	
+	/* Top Bar Inverted */
+	
+	#top-bar.inverted {
+		background-color: #111;
+		color: #c3c3c3;
+	}
+	
+	#top-bar.inverted a {
+		color: #c3c3c3;
+	}
+	
+	/* Responsive Top Bar */
+	
+	@media screen and (max-width: 767px) {
+		#top-bar > .container {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			height: initial;
+		}
+		#top-bar {
+			height: initial;
+		}
+		.contact-info {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			display: none;
+		}
+		.contact-info .sep {
+			display: none;
+		}
+		.contact-info div {
+			padding: 5px;
+		}
+		ul#lang-menu {
+			padding: 5px;
+		}
+	}
+	
+	/* Responsive Header */
+	
+	.nav-toggle {
+		display: none;
+	}
+	
+	@media screen and (max-width: 767px) {
+		ul#main-menu {
+			background: #808080;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin-top: 220px;
+			height: 0%;
+			overflow: hidden;
+		}
+		ul#main-menu li {
+			display: block;
+			text-align: center;
+		}
+		.nav-toggle {
+			border: 2px solid #808080;
+			height: 35px;
+			width: 35px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			cursor: pointer;
+		}
+		.nav-toggle span {
+			height: 4px;
+			width: 25px;
+			background: #808080;
+			display: block;
+			margin: 2px;
+		}
+		.nav-toggle.active + ul#main-menu {
+			height: initial;
+		}
+	}
+	</style>
+	<script>
+		function toggleMenu(elem) {
+			// add 'active' classs to the element that was clicked
+			elem.classList.toggle('active');
+		}
+	</script>
+</head>
+
+<body>
+
+<div id="header">
+	<div class="container">
+		<h1 class="logo">Logo</h1>
+		<div class="nav-toggle" onclick="toggleMenu(this)">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<ul id="main-menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Projects</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="header" class="inverted">
+	<div class="container">
+		<h1 class="logo">Logo</h1>
+		<div class="nav-toggle" onclick="toggleMenu(this)">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<ul id="main-menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Projects</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="top-bar">
+	<div class="container">
+		<div class="contact-info">
+			<div>Tel. +372 5555 5555</div>
+			<div class="sep">|</div>
+			<div>Email. info@localhost.ee</div>
+		</div>
+		<ul id="lang-menu">
+			<li><a href="#">ET</a></li>
+			<li><a href="#">EN</a></li>
+			<li><a href="#">FI</a></li>
+		</ul>
+	</div>
+</div>
+<div id="header">
+	<div class="container">
+		<h1 class="logo">Logo</h1>
+		<div class="nav-toggle" onclick="toggleMenu(this)">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<ul id="main-menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Projects</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="top-bar" class="inverted">
+	<div class="container">
+		<div class="contact-info">
+			<div>Tel. +372 5555 5555</div>
+			<div class="sep">|</div>
+			<div>Email. info@localhost.ee</div>
+		</div>
+		<ul id="lang-menu">
+			<li><a href="#">ET</a></li>
+			<li><a href="#">EN</a></li>
+			<li><a href="#">FI</a></li>
+		</ul>
+	</div>
+</div>
+<div id="header" class="inverted">
+	<div class="container">
+		<h1 class="logo">Logo</h1>
+		<div class="nav-toggle" onclick="toggleMenu(this)">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<ul id="main-menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Projects</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+
+</html>
